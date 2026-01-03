@@ -36,6 +36,9 @@ build: clean
 	CGO_ENABLED=0 GOARCH=386	GOOS=linux	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-sshx86 .
 	CGO_ENABLED=0 GOARCH=amd64	GOOS=windows	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-sshx64.exe .
 	CGO_ENABLED=0 GOARCH=386	GOOS=windows	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-sshx86.exe .
+	CGO_ENABLED=0 GOARCH=arm GOARM=5 GOOS=linux	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-ssharmv5 .
+	CGO_ENABLED=0 GOARCH=arm GOARM=6 GOOS=linux	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-ssharmv6 .
+	CGO_ENABLED=0 GOARCH=arm GOARM=7 GOOS=linux	go build -ldflags="$(LDFLAGS) -s -w" -o bin/reverse-ssharmv7 .
 
 .PHONY: clean
 clean:
